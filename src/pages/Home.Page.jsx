@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import axios from 'axios';
 // HOC
 import DefaultlayoutHoc from "../layout/Default.layout";
 //components
@@ -11,6 +11,8 @@ const HomePage = () => {
   const [recommendedMovies, setrecommendedMovies] = useState([]);
   const [premierMovies, setpremierMovies] = useState([]);
   const [onlineStreamEvents, setonlineStreamEvents] = useState([]);
+
+  
   return (
     <>
       <HeroCarousel />
@@ -24,7 +26,7 @@ const HomePage = () => {
       <div className="container mx-auto px-4 md:px-12 my-8">
         <PosterSlider
           title="Recommended Movies"
-          subject="List of Recommended Movies"
+          subtitle="List of Recommended Movies"
           posters={recommendedMovies}
           isDark={false}
         />
@@ -40,7 +42,7 @@ const HomePage = () => {
           </div>
           <PosterSlider
             title="Premiers"
-            subject="Brand new release every sunday"
+            subtitle="Brand new release every sunday"
             posters={premierMovies}
             isDark={true}
           />
@@ -50,7 +52,7 @@ const HomePage = () => {
       <div className="container mx-auto px-4 md:px-12 my-8 flex flex-cop gap-3">
         <PosterSlider
           title="Online Streaming Events"
-          subject="Online Streaming Events"
+          subtitle="Online Streaming Events"
           posters={onlineStreamEvents}
           isDark={false}
         />

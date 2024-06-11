@@ -6,7 +6,9 @@ function NavSm(){
       <div className="text-white flex items-center justify-between">
         <div>
           <h3 className="text-xl font-bold">It All Starts Here!!</h3>
-          <span className="text-gray-400 text-xs flex items-center cursor-pointer hover:text-white">Hyderabad <BiChevronDown/></span>
+          <span className="text-gray-400 text-xs flex items-center cursor-pointer hover:text-white">
+          Hyderabad<BiChevronDown/>
+          </span>
         </div>
         <div className="w-8 h-8">
           <h3 className="text-gray-400">Use App</h3>
@@ -21,7 +23,9 @@ function NavMd(){
     <>
       <div className="w-full flex items-center gap-3 bg-white px-3 py-1 rounded-md">
         <BiSearch/>
-        <input type="search" className="w-full bg-transparent border-none focus:outline-none" />
+        <input 
+        type="search" 
+        className="w-full bg-transparent border-none focus:outline-none" />
       </div>
     </>
   )
@@ -41,18 +45,37 @@ function NavLg(){
           </div>
           <div className="w-full flex item-center gap-3 bg-white px-3 py-1 rounded-md">
             <BiSearch />
-            <input type="search" className="w-full bg-transparent border-none focus:outline-none" />
+            <input type="search" 
+            className="w-full bg-transparent border-none focus:outline-none"
+            placeholder="Search for movies, events, plays, sports and activities.." />
           </div>
         </div>
         <div className="flex items-center gap-3">
-        <span className="text-gray-300 text-base flex items-center cursor-pointer hover:text-white ">Hyderabad<BiChevronDown/></span>
+        <span className="text-gray-300 text-base flex items-center cursor-pointer hover:text-white ">
+        Hyderabad<BiChevronDown/></span>
         </div>
       </div>
     </>
   );
 }
 const Navbar = () => {
-  return <NavLg />;
+  //return <NavLg />;
+  return (
+    <nav className="bg-black px-4 my-3">
+    {/*small NavBar */}
+    <div className="md:hidden">
+      <NavSm />
+    </div>
+    {/*Medium Screeen size*/}
+    <div className="hidden md:flex lg:hidden">
+      <NavMd />
+    </div>
+    {/* large screen size*/}
+    <div className="hidden md:hidden lg:flex">
+      <NavLg />
+    </div>
+    </nav>
+  )
 };
 
 export default Navbar;
