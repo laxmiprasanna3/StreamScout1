@@ -15,7 +15,7 @@ const HomePage = () => {
   useEffect(()=>{
     const requestTopRatedMovies = async () =>{
       const getTopRatedMovies = await axios.get(
-        "https://api.themoviedb.org/3/movie/top_rated?api_key=8609c61bad2a183b7a288df6d8d39b61"
+        "/movie/top_rated"
       );
       setrecommendedMovies(getTopRatedMovies.data.results);
     }
@@ -25,7 +25,7 @@ const HomePage = () => {
     useEffect(() => {
       const requestPopularMovies = async () => {
         const getPopularMovies = await axios.get(
-          "https://api.themoviedb.org/3/movie/popular?api_key=8609c61bad2a183b7a288df6d8d39b61"
+          "/movie/popular"
         );
         setpremierMovies(getPopularMovies.data.results);
       };
@@ -35,7 +35,7 @@ const HomePage = () => {
     useEffect(() => {
       const requestUpcomingMovies = async () => {
         const getUpcomingMovies = await axios.get(
-          "https://api.themoviedb.org/3/movie/upcoming?api_key=8609c61bad2a183b7a288df6d8d39b61"
+          "/movie/upcoming"
         );
         setonlineStreamEvents(getUpcomingMovies.data.results);
       };
@@ -78,7 +78,7 @@ const HomePage = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-12 my-8 flex flex-cop gap-3">
+      <div className="container mx-auto px-4 md:px-12 my-8 flex flex-col gap-3">
         <PosterSlider
           title="Online Streaming Events"
           subtitle="Online Streaming Events"

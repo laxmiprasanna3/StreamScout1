@@ -11,7 +11,7 @@ function NavSm(){
           </span>
         </div>
         <div className="w-8 h-8">
-          <h3 className="text-gray-400">Use App</h3>
+          <h3 className="text-gray-200">Use App</h3>
         </div>
       </div>
     </>

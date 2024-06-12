@@ -1,5 +1,4 @@
 import React from "react";
-
 // component
 import Navbar from "../components/Navbar/Navbar.Component";
 
